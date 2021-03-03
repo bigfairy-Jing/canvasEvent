@@ -1,10 +1,9 @@
 
-import { generatorId } from './lib/helper'
-
-export default class Base {
+import { createId } from '../lib/helper'
+export class Base {
 
   constructor(){
-    this.id = generatorId()
+    this.id = createId()
     this.listeners = {}
   }
 

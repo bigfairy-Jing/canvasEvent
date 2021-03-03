@@ -1,11 +1,15 @@
+import { idToRgba } from '../lib/helper'
 import { Base } from './Base'
 
 
-export default class Circle {
+export class Circle extends Base {
 
   constructor(props){
     super()
     this.options = {
+      x: props.x,
+      y: props.y,
+      radius: props.radius,
       fillColor: props.fillColor || '#fff',
       strokeColor: props.strokeColr || '#000',
       strokeWidth: props.strokeWidth || 1
@@ -13,9 +17,7 @@ export default class Circle {
   }
 
   draw(ctx, hideCtx){
-    const {x, y, radius} = this.props
-    const {fillColor, strokeColor,  strokeWidth} = this.options
-
+    const {x, y, radius, fillColor, strokeColor,  strokeWidth} = this.options
     ctx.save()
     ctx.beginPath()
     ctx.fillStyle = fillColor
@@ -26,15 +28,17 @@ export default class Circle {
     ctx.stroke()
     ctx.restore()
 
-    osCtx.save();
-    osCtx.beginPath();
-    osCtx.fillStyle = fillColor;
-    osCtx.strokeStyle = strokeColor;
-    osCtx.lineWidth = strokeWidth;
-    osCtx.arc(x, y, radius, 0, Math.PI * 2);
-    osCtx.fill();
-    osCtx.stroke();
-    osCtx.restore();
+    const [r, g , b , a] = idToRgba(this.id)
+
+    hideCtx.save();
+    hideCtx.beginPath();
+    hideCtx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
+    hideCtx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
+    hideCtx.lineWidth = strokeWidth;
+    hideCtx.arc(x, y, radius, 0, Math.PI * 2);
+    hideCtx.fill();
+    hideCtx.stroke();
+    hideCtx.restore();
 
   }
 

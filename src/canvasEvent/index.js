@@ -1,3 +1,8 @@
-// canvas逻辑
-import { generatorId } from './lib/helper'
-console.log(generatorId())
+import { Circle, Rect } from './Widget'
+import { Mural } from './Mural'
+
+export {
+  Circle,
+  Mural,
+  Rect
+}
