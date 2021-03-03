@@ -1,6 +1,6 @@
 # canvasEvent
-* 小部件取名为widget
-* 舞台取名为 stage
+* 小部件取名为 widget
+* 舞台取名为 Mural
 
 
 ### 参考文档

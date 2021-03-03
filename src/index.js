@@ -1,1 +1,1 @@
-// canvas逻辑
+import * as test from './canvasEvent'
