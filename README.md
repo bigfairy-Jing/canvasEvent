@@ -12,9 +12,9 @@
 
 ### 监听罗列
 * isPointInPath + Path2D  API (存在极大的兼容性)
-* 像素法
 * 角度法
 * 射线法
+* 像素法
 
 ### 参考文档
 * https://juejin.cn/post/6888209975965909000
