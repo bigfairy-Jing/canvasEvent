@@ -9,7 +9,7 @@ import {
 export class Heart extends Base {
 
   constructor(props) {
-    super()
+    super(props)
     this.options = {
       x: props.x,
       y: props.y,

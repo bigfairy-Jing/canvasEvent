@@ -5,7 +5,7 @@ import { Base } from './Base'
 export class FivePointedStar extends Base {
 
   constructor(props) {
-    super()
+    super(props)
     this.options = {
       x: props.x,
       y: props.y,

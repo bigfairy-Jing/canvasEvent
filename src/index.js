@@ -33,7 +33,8 @@ const fivePoint = new FivePointedStar({
   y: 50,
   minSize: 25,
   maxSize: 50,
-  fillColor: 'red'
+  fillColor: 'red',
+  isAnimation : true
 })
 
 

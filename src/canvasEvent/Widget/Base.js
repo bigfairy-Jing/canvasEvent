@@ -2,10 +2,10 @@
 import { createId } from '../lib/helper'
 export class Base {
 
-  constructor(){
+  constructor(props){
     this.id = createId()
     this.listeners = {}
-    this.isAnimation = false // 这个元素是否需要移动位置,以及是否需要重叠，监听事件
+    this.isAnimation = props.isAnimation || false // 这个元素是否需要移动位置,以及是否需要重叠，监听事件
   }
 
   draw (){

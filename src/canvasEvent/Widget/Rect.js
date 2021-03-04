@@ -3,7 +3,7 @@ import { Base } from './Base';
 
 export class Rect extends Base {
   constructor(props) {
-    super();
+    super(props);
     this.options = {
       x: props.x,
       y: props.y,
