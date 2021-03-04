@@ -46,7 +46,7 @@ export class Mural {
     this.widgets.add(id);
     let hideCtx = this.hideCtx
 
-    // 如果该widget需要移动的话, 存在的话加上，不存在的话new， 防止用户多次add
+    // 如果该widget需要移动的话或者覆盖, 存在的话加上，不存在的话new， 防止用户多次add
     if (isAnimation) {
       if (this.moveHideCtxMap.get(id)) hideCtx = this.moveHideCtxMap.get(id)
       else {
