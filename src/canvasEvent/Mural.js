@@ -41,7 +41,6 @@ export class Mural {
 
 
   add(widget, isOld = false) {
-    console.log(isOld)
     // 这里代表了动画，或者其他，就是事件已经绑定好了，只是一些位置发生改变
     if(isOld){
       this.drawAll(widget)
@@ -70,14 +69,12 @@ export class Mural {
     const x = ev.offsetX;
     const y = ev.offsetY;
     const idSet = this.getHideIdSet(x, y);
-    // if(idSet.size === 0) return
     // 不能在这里遍历idSet
     this.eventAnglogies.dispatchAction({ type, idSet }, ev)
   };
 
   getHideIdSet(x, y) {
     const rgba = [...this.hideCtx.getImageData(x * this.dpr, y * this.dpr, 1, 1).data];
-
     const staticRgbaToId = rgbaToId(rgba);
 
     const staticId = this.widgets.has(staticRgbaToId) ? staticRgbaToId :[]

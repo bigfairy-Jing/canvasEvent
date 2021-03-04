@@ -1,4 +1,5 @@
 # canvas事件模拟
+### 引用内容请注明原作者位置 bigfairy-Jing
 # canvasEvent
 * 小部件取名为 widget
 * 舞台取名为 Mural
