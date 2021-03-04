@@ -27,6 +27,7 @@ export class Mural {
     this.canvas.addEventListener('mousemove', this.handleCreator(ActionTypes.move));
 
     this.widgets = new Set(); // 将所有静态部件放入Set容器中
+    this.widgetsMap = new Map()
 
     this.eventAnglogies = new EventAnglogies();
   }
@@ -39,11 +40,18 @@ export class Mural {
   }
 
 
-  add(widget) {
+  add(widget, isOld = false) {
+    console.log(isOld)
+    // 这里代表了动画，或者其他，就是事件已经绑定好了，只是一些位置发生改变
+    if(isOld){
+      this.drawAll(widget)
+      return
+    }
     const id = widget.getId();
     const isAnimation = widget.getIsAnimation()
     this.eventAnglogies.addListeners(id, widget.getListeners());
     this.widgets.add(id);
+    this.widgetsMap.set(id, widget)
     let hideCtx = this.hideCtx
 
     // 如果该widget需要移动的话或者覆盖, 存在的话加上，不存在的话new， 防止用户多次add
@@ -84,5 +92,21 @@ export class Mural {
     // console.log(animationId,this.moveHideCtxMap, '--->')
     // 获取到所有当前位置的关于动静态id的组合
     return new Set(animationId.concat(staticId))
+  }
+
+  // 产生动画重绘所有的图案
+  drawAll(moveWidget){
+    // 清空视口画布
+    this.ctx.clearRect(0, 0 , this.canvas.height, this.canvas.width)
+    this.widgetsMap.forEach((widget, id)=>{
+      const hideCtx = this.moveHideCtxMap.get(id) || this.hideCtx
+      // 如果不是当前widget 直接画，如果是当前widget 清空隐藏的Rect
+      // 因为重新draw之后又会有一次hideCtx记录
+      if(moveWidget !== widget) widget.draw(this.ctx, hideCtx);
+      else hideCtx.clearRect(0, 0 , this.canvas.height, this.canvas.width)
+    })
+    const moveId = moveWidget.getId();
+    const moveCtx = this.moveHideCtxMap.get(moveId)
+    moveWidget.draw(this.ctx, moveCtx)
   }
 }

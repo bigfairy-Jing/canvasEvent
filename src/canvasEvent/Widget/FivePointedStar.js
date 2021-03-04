@@ -50,7 +50,6 @@ export class FivePointedStar extends Base {
     hideCtx.save();
     hideCtx.beginPath();
     hideCtx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
-    hideCtx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
     this.drawFivePointedStar(hideCtx, x, y, maxSize, minSize)
     hideCtx.fill();
     hideCtx.stroke();

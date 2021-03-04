@@ -7,13 +7,16 @@ import { Heart } from './Widget/Heart'
 
 import { FivePointedStar } from './Widget/FivePointedStar'
 
+import { Polygon } from './Widget/Polygon'
+
 // Mural
 import { Mural } from './Mural'
 
 export {
   Circle,
-  Mural,
   Rect,
   FivePointedStar,
-  Heart
+  Heart,
+  Polygon,
+  Mural,
 }

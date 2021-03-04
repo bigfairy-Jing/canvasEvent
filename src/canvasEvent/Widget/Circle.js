@@ -25,7 +25,6 @@ export class Circle extends Base {
     ctx.linWidth = strokeWidth
     ctx.arc(x,y,radius, 0 , Math.PI * 2)
     ctx.fill()
-    ctx.stroke()
     ctx.restore()
 
     const [r, g , b , a] = idToRgba(this.id)
@@ -33,11 +32,9 @@ export class Circle extends Base {
     hideCtx.save();
     hideCtx.beginPath();
     hideCtx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
-    hideCtx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
     hideCtx.lineWidth = strokeWidth;
     hideCtx.arc(x, y, radius, 0, Math.PI * 2);
     hideCtx.fill();
-    hideCtx.stroke();
     hideCtx.restore();
 
   }

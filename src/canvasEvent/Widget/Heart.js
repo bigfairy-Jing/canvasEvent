@@ -49,7 +49,6 @@ export class Heart extends Base {
       ctx.lineTo(vector.x, vector.y);
     }
     ctx.fill()
-    ctx.stroke()
     ctx.restore()
 
     const [r, g, b, a] = idToRgba(this.id)
@@ -57,7 +56,6 @@ export class Heart extends Base {
     hideCtx.save();
     hideCtx.beginPath();
     hideCtx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
-    hideCtx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
     hideCtx.translate(x,y);
     hideCtx.rotate(Math.PI);
     for(let i=0; i<50; i++) {
@@ -65,7 +63,6 @@ export class Heart extends Base {
       hideCtx.lineTo(vector.x, vector.y);
     }
     hideCtx.fill();
-    hideCtx.stroke();
     hideCtx.restore();
   }
 }

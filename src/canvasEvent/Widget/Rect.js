@@ -9,7 +9,6 @@ export class Rect extends Base {
       y: props.y,
       width: props.width,
       height: props.height,
-      radius: props.radius,
       fillColor: props.fillColor || '#fff',
       strokeColor: props.strokeColr || '#000',
       strokeWidth: props.strokeWidth || 1
