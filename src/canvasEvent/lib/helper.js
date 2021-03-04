@@ -21,3 +21,9 @@ export const createId = () => {
 export const createOnceId = () => {
   return Array(3).fill(0).map(() => Math.ceil(Math.random() * 255)).concat(255).join('-');
 };
+
+// 判断两个set容器相等,注意这里只判断字符串类型的set容器
+export const equalSet = (a, b)=> [...a].join('') === [...b].join('')
+
+// set容器的差值
+export const diffSet = (a, b) => new Set([...a].filter(x => !b.has(x)));

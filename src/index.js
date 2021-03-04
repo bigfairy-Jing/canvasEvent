@@ -42,7 +42,7 @@ circle.on(EventNames.click, ()=>{
 })
 
 circle.on(EventNames.mouseleave, ()=>{
-  console.log('离开')
+  console.log('离开了圆形')
 })
 
 rect.on(EventNames.click, ()=>{
@@ -51,6 +51,10 @@ rect.on(EventNames.click, ()=>{
 
 heart.on(EventNames.mouseenter, ()=>{
   console.log('进入了心')
+})
+
+fivePoint.on(EventNames.mouseenter, ()=>{
+  console.log('进入了五角星')
 })
 
 mural.add(circle)

@@ -5,6 +5,7 @@ export class Base {
   constructor(){
     this.id = createId()
     this.listeners = {}
+    this.isAnimation = false // 这个元素是否需要移动位置,以及是否需要重叠，监听事件
   }
 
   draw (){
@@ -27,4 +28,7 @@ export class Base {
     return this.id
   }
 
+  getIsAnimation(){
+    return this.isAnimation
+  }
 }
