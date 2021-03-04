@@ -15,6 +15,7 @@ export class Mural {
     this.ctx = this.canvas.getContext('2d');
     this.hideCtx = this.hidecanvas.getContext('2d');
     this.ctx.scale(dpr, dpr); // 根据dpr 缩放画布
+    this.hideCtx.scale(dpr, dpr); // 根据dpr 缩放画布
     this.dpr = dpr;
 
     this.canvas.addEventListener('mousedown', this.handleCreator(ActionTypes.down));
