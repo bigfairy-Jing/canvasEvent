@@ -9,6 +9,8 @@
 
 ![预览图片](./static/预览.gif)
 
+3. 代码地址 https://github.com/bigfairy-Jing/canvasEvent
+
 ### 二.前置
 
 > 关于canvas事件模拟方式罗列
