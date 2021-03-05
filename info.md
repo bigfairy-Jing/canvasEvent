@@ -9,7 +9,7 @@
 
 ![预览图片](./static/预览.gif)
 
-### 前置
+### 二.前置
 
 > 关于canvas事件模拟方式罗列
 
@@ -36,7 +36,7 @@
 
 #### 5. ...其他
 
-### 特别注明(API以及其他)
+### 三.特别注明(API以及其他)
 
 #### 1. OffscreenCanvas
 
@@ -46,7 +46,7 @@
 #### 2. getImageData
 * CanvasRenderingContext2D.getImageData(sx, sy, sw, sh) 返回一个ImageData对象，用来描述canvas区域隐含的像素数据，这个区域通过矩形表示，起始点为(sx, sy)、宽为sw、高为sh。
 * 参数：sx, sy:将要被提取的图像数据矩形区域的左上角 x,y 坐标。 sw, sh:将要被提取的图像数据矩形区域的宽度, 高度
-* 注意这里getImageData().data 的取值范围为(0,255)所以这里 按照0-> 0 , 1->255的范围
+* 注意这里getImageData().data 的取值范围为(0,255)所以这里 rgba中 a 按照0-> 0 , 1->255的范围
 
 ####  3.正多边形绘制方式
 * 原理是中心点到所有角顶点的集合加起来为360度
@@ -57,3 +57,13 @@
 #### 5.心绘制方式
 * 公式: x = 16 * (sint)**3; y = 13cost - 5cons2t - 2cos3t - cos4t
 
+#### 四. 关于命名
+* 小部件取名为 widget
+* 舞台取名为 Mural
+* 隐藏
+
+
+#### 五. 参考文档
+* https://juejin.cn/post/6888209975965909000
+* https://juejin.cn/post/6844903847492583438
+* https://blog.csdn.net/qq_21118431/article/details/102486276?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control

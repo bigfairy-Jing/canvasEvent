@@ -14,7 +14,7 @@ export const createId = () => {
   while (idPool[id]) {
     id = createOnceId();
   }
-  console.log(id)
+  // console.log(id)
   return id;
 };
 

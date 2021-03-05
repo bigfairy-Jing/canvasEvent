@@ -86,7 +86,6 @@ export class Mural {
         animationId.push(id)
       }
     })
-    // console.log(animationId,this.moveHideCtxMap, '--->')
     // 获取到所有当前位置的关于动静态id的组合
     return new Set(animationId.concat(staticId))
   }
