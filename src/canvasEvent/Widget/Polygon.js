@@ -37,7 +37,7 @@ export class Polygon extends Base {
     ctx.stroke();
     ctx.restore();
 
-    const [ r, g, b, a ] = idToRgba(this.id);
+    const [ r, g, b, a ] = idToRgba(this.getId());
 
     hideCtx.save();
     hideCtx.beginPath();

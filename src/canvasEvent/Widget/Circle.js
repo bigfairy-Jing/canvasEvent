@@ -27,7 +27,7 @@ export class Circle extends Base {
     ctx.fill()
     ctx.restore()
 
-    const [r, g , b , a] = idToRgba(this.id)
+    const [r, g , b , a] = idToRgba(this.getId())
     hideCtx.save();
     hideCtx.beginPath();
     hideCtx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
